@@ -50,9 +50,9 @@ numberOfTweets = 2
 
 for tweet in tweepy.Cursor(api.search, search_string).items(numberOfTweets):
   try:
-    tweet.favourite()
+    tweet.favorite()
     print('That tweet was likeable')
-  except tweepy.TweepyError as e:
+  except tweepy.TweepError as e:
     print(e.reason)
   except StopIteration:
     break
