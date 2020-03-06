@@ -57,6 +57,19 @@ for tweet in tweepy.Cursor(api.search, search_string).items(numberOfTweets):
   except StopIteration:
     break
 
+#RETWEET
 
+search_string = 'bentley'
+
+numberOfTweets = 2 
+
+for tweet in tweepy.Cursor(api.search, search_string).items(numberOfTweets):
+  try:
+    tweet.retweet()
+    print('That tweet was likeable')
+  except tweepy.TweepError as e:
+    print(e.reason)
+  except StopIteration:
+    break
 
 
